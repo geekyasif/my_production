@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} IUL PAPERS : {% endblock title %} 
+
+{% block content %}
+
+<div class="container mt-3">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- wide ads iulforum -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5487928220"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<h1>{{papers_by_semester.branch}}</h1>
+    <div class="row my-4">
+            <div class="col-sm-8  ">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- wide ads iulforum -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5487928220"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            
+                <div class="alert alert-secondary shadow">
+                <strong>{{papers_by_semester.semester}} Question Papers</strong>
+                </div>
+
+
+                <div class="papers my-5">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- wide ads iulforum -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5487928220"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                <ol class="paper-download-ul">
+                    {% for paper in papers %}
+
+                        
+                            <li class="paper-download-li my-3"><a class="text-danger text-decoration-none" href="/media/{{paper.document}}">{{paper.title}}</a></li>
+                      
+
+                        {%empty%}
+                  </ol>
+                            <h5 class="text-center">Paper Not Found !</h5>
+                    {% endfor %}
+                </div>
+            </div>
+
+                <div class="col-sm-4">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                                       crossorigin="anonymous"></script>
+                            <!-- sidebar ads -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-8586139549834082"
+                                 data-ad-slot="5573125493"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                            
+                    <div class="blog-category-sidebar">
+                        <div class="alert alert-secondary shadow" role="alert">
+                           Branch Related Semesters
+                        </div>
+                            <ul class="recent-ul">
+                                
+                        {% for semester in semesters %}
+
+                            <li class="recent-li my-3" ><a class="text-decoration-none" href="{{semester.get_absolute_url}}">{{semester.semester}}</a></li>
+
+                        {% endfor %}
+                            </ul>
+                         
+                  
+                     </div>
+
+                           <div class="blog-category-sidebar">
+                                <div class="alert alert-secondary shadow" role="alert">
+                                All Branches
+                                </div>
+                                    {% for branch in branches %}
+                                    <div class="list-group my-3 shadow-sm">
+                                        <a href="{{branch.get_absolute_url}}" class="list-group-item list-group-item-action "
+                                            aria-current="true"> {{branch.name}}</a>
+                                    </div>
+
+                                    {% endfor %}
+                  
+                            </div>
+                            
+                                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- sidebar ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5573125493"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+                </div>
+
+    
+    </div>
+</div>
+
+
+{% endblock content %}
+
+

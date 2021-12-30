@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Iul  Forum : BLOG {% endblock %}
+{% block blog_active %} active {% endblock blog_active %}
+
+{% block content %}
+
+<div class="blog-container my-3">
+    <div class="container">
+        <div class="blog-head col-sm-8">
+            <div class="blog-head-title">
+                <h1>Iul Blog</h1>
+            </div>
+            <div class="blog-head-description">
+                <p>This blog is all about web development, programming languages and other tech related things. The main goal of this blog is to provide programming knowledge from basic to advance,  So you can learn programming and become a great developer.</p>
+            </div>
+        </div>
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- wide ads iulforum -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5487928220"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+        <div class="blog-content my-4">
+            <div class="row blow-row">
+                <div class="col-sm-8">
+                    <div class="alert alert-secondary shadow" role="alert">
+                        Latest Post
+                    </div>
+
+                    <div class="blog-latest-post">
+                        <div class="row row-cols-1 row-cols-md-3 g-4 mt-2 mb-5">
+                            {% for post in page_obj %}
+                            <div class="col">
+                                <div class="card h-100 shadow  mb-5 bg-body rounded">
+                                    <a href="{{post.get_absolute_url}}"> <img src="/media/{{post.image}}"
+                                            class="card-img-top" alt="..."></a>
+                                    <div class="card-body">
+                                        <h6 class="card-title"><a class="text-dark text-decoration-none" href="{{post.get_absolute_url}}">{{post.title|truncatechars:65 }}</a></h6>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <small><a class="text-decoration-none text-secondary"href="{{post.category.get_absolute_url}}">{{post.category.name}}</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                      <div class="pagination float-end">
+                          <span class="step-links">
+                              {% if page_obj.has_previous %}
+                                  <a href="?page=1">&laquo; first</a>
+                                  <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                              {% endif %}
+                      
+                              <span class="current">
+                                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                              </span>
+                      
+                              {% if page_obj.has_next %}
+                                  <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                  <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                              {% endif %}
+                          </span>
+                      </div>
+        
+
+
+
+
+                </div>
+
+                <div class="col-sm-4 ">
+                    <div class="blog-recent-post">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            Recent Post
+                        </div>
+
+                        <ul class="recent-ul">
+                        {% for post in page_obj %}
+                            <li class="recent-li my-3" ><a class="text-decoration-none" href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                        {% endfor %}
+                        </ul>
+                        
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- sidebar ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5573125493"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+                    </div>
+
+                    <div class="blog-category-sidebar mt-5">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            Category
+                        </div>
+                        {% for category in categories %}
+                        <div class="list-group my-3 shadow-sm">
+                            <a href="{{category.get_absolute_url}}" class="list-group-item list-group-item-action "
+                                aria-current="true"> {{category.name}}</a>
+                        </div>
+
+                        {% endfor %}
+                        
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+<!-- sidebar ads -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8586139549834082"
+     data-ad-slot="5573125493"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

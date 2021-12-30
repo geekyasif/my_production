@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load static %}
+{%block title %} Search results - {{query}} : Iul Forum {% endblock title %}
+
+
+{% block content %}
+  <div class="searchResult col-sm-10 ms-auto my-4 ">
+    <h2 class="my-3 mx-2">Search results: "{{query}}"</h2>
+   
+    {% if allPosts|length < 1 %} 
+      <p>No Results Found!</p>
+      <p>Your search - <b>{{query}}</b> - did not match any documents.</p>
+      <p>Suggestions:</p>
+      <ul>
+        <li>Try different keywords.</li>
+        <li>Try more general keywords.</li>
+        <li>Try fewer keywords.</li>
+        <li>Make sure that all words are spelled correctly.</li>
+      </ul>
+    {% endif %} 
+
+
+  {% comment %} for post query {% endcomment %}
+    {% if allposts|length < 1 %}
+           <ul>
+          {% for post in allPosts %}
+              <li><a href="{{post.get_absolute_url}}">{{post.title}}</a>  (blog)</li> 
+          {% endfor %}
+          </ul>
+    {% endif %}
+
+
+
+      {% if allnotes|length < 1 %}
+          <ul>
+            {% for note in allnotes %}
+              <li>  <a href="{{note.get_absolute_url}}">{{note.title}} </a> (notes)</li>
+            {% endfor %}
+          </ul>
+    {% endif %}
+
+
+  {% comment %} for paper query  {% endcomment %}
+    {% if allpapers|length < 1 %}
+          <ul>
+            {% for paper in allpapers %}
+              <li>  <a href="{{paper.get_absolute_url}}">{{paper.title}}</a>  (Question paper)</li>
+            {% endfor %}
+          </ul>
+    {% endif %}
+
+
+
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} 
+{% load static %} {% load crispy_forms_tags %} 
+{% block title %}Iul Forum : Syllabus {% endblock title %} 
+{% block syllabus_active %} active {% endblock syllabus_active %} 
+
+
+
+
+{% block content %}
+
+
+<div class="container my-4">
+  <h1>BCA Syllabus</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2 mb-5 text-center">
+    <div class="col">
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 1</a>
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 2</a>
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 3</a>
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 4</a>
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 5</a>
+      <a class="btn d-grid gap-2 btn-outline-danger" href="" role="button">Semester 6</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

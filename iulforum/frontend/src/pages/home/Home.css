@@ -1,0 +1,12 @@
+.main-intro-container{
+    /* background-image: url('../../assets/main.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.main-intro-content-container{
+    /* opacity: 1; */
+    /* z-index: 1; */
+    /* background-color: aliceblue; */
+}

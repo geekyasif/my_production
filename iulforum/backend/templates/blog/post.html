@@ -1,0 +1,178 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} {{post.title}} - Iul Forum {% endblock title %}
+
+{% block content %}
+
+
+<div class="blog-container">
+    <div class="container">
+        <div class="blog-content">
+            <div class="row blow-row mt-4">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                 crossorigin="anonymous"></script>
+            <!-- wide ads iulforum -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8586139549834082"
+                 data-ad-slot="5487928220"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+
+                <div class="col-sm-8">
+                    <h6><span class="badge bg-secondary "><a class="text-decoration-none text-white"
+                                href="{{post.category.get_absolute_url}}">{{post.category}}</a>
+
+                        </span>
+
+                        <span class="float-end">
+                            <p>{{post.publish}}</p>
+                        </span>
+
+                    </h6>
+                    <h2 class="post-title">{{post.title}}</h2>
+                    <hr>
+                    <img class="post-img" src="/media/{{post.image}}" alt="">
+                    
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                         crossorigin="anonymous"></script>
+                    <!-- wide ads iulforum -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8586139549834082"
+                         data-ad-slot="5487928220"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+
+
+                    <p class="post-description my-4">{{post.description|safe}}</p>
+                    
+                    
+                    
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                         crossorigin="anonymous"></script>
+                    <!-- wide ads iulforum -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8586139549834082"
+                         data-ad-slot="5487928220"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+
+
+                    <div class="comment-section">
+                            <div class="comment-count alert alert-secondary">
+                                {%	with comments.count	as	total_comments	%}
+                                    <h4>
+                                   	  Comment{{total_comments|pluralize }} ( {{	total_comments	}} )
+                                    </h4>
+                                {%	endwith	%}
+                            </div>
+                        
+                            <div class="display-comment my-3">
+                                {%	for	comment	in	comments %}
+                           
+                                    <div class="comment">
+                                    
+                                    <div class="d-flex border py-3 px-3 my-4">
+                                      <div class="flex-shrink-0">
+                                        <img src="{% static 'images/default.png'%}" class="mr-3 comment-user-icon" alt="...">
+                                      </div>
+                                      <div class="flex-grow-1 ms-3">
+                                          <h5 class="mt-0">{{ comment.name }}</h5>
+                                          <small class="text-secondary">{{	comment.created	}}</small>
+                                         <hr>
+                                           <p class="comment-body">{{ comment.comment|linebreaks }}</p>
+                                      </div>
+                                    </div>
+                                    
+                                    
+                                    </div>
+                                {%	empty	%}
+                                        <p class="text-center">There are no comments yet.</p>
+                                {%	endfor	%}
+                            </div>
+
+                            <div class="add-comment  bg-light py-3 px-3 border my-4">
+                                {% if new_comment %}
+                                    <h2 class="text-center text-success">Your comment has been added.</h2>
+                                {% else %}
+                                    <h2>Leave a Comment</h2>
+                                    <p>Your email address will not be published. Required fields are marked *</p>
+                                    <form action="" method="post">
+                                        {%	csrf_token	%}
+                                         {{ comment_form|crispy }}
+                                        <div class="d-grid"><input class="btn btn-sm btn-outline-danger mt-3" id="add-comment-btn"type="submit"	value="Add comment"></div>
+                                    </form>
+                                {%	endif	%}
+                            </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 mb-4">
+                    <div class="blog-recent-post">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            Recent Post
+                        </div>
+                        <ul class="recent-ul">
+                                {% for post in allPosts %}
+                                    <li class="recent-li my-3"><a class="text-dark text-decoration-none" href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                                {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="blog-category-sidebar my-5">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            Category
+                        </div>
+                        {% for category in categories %}
+                        <div class="list-group my-3 shadow-sm">
+                            <a href="{{category.get_absolute_url}}" class="list-group-item list-group-item-action "
+                                aria-current="true"> {{category.name}}</a>
+                        </div>
+                        {% empty %}
+
+                        <h4 class="text-center">No Category Found</h4>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+         crossorigin="anonymous"></script>
+    <!-- wide ads iulforum -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8586139549834082"
+         data-ad-slot="5487928220"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+
+
+
+</div>
+
+
+{% endblock content %}

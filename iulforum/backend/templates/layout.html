@@ -1,0 +1,305 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+
+<head>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+     crossorigin="anonymous"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "/css/style.css" %}">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <link rel="shortcut icon" type="image/jpg/png" href="{% static 'images/fabicon.png' %}"/>
+  <script  src="{% static '/js/tinymce.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static '/js/prism.css' %}">
+  <script src="{% static '/js/prism.js' %}"></script>
+
+  <title> {% block title %} {% endblock  %} </title>
+  
+  <style>
+
+.pagination{
+        margin: 41px 0px;
+
+}
+
+.pagination a{
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    background: white;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 0px 2px;
+    text-decoration: none
+}
+.pagination a:hover{
+    background: #dc3545;
+    color:white;
+}
+
+
+.controls input{
+
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.controls textarea{
+
+  width: 100%;
+  margin: 10px 0px;
+}
+.comment-user-icon{
+    width: 35px;
+}
+
+.card-subject{
+  height: 300px !important;
+}
+
+
+
+.intro-main-container {
+ /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1450' height='561' preserveAspectRatio='none' viewBox='0 0 1450 561'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1026%26quot%3b)' fill='none'%3e%3crect width='1450' height='561' x='0' y='0' fill='rgba(239%2c 239%2c 239%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c593.666C110.24%2c593.619%2c163.002%2c455.332%2c245.986%2c382.761C314.738%2c322.636%2c398.979%2c281.987%2c445.962%2c203.664C496.418%2c119.552%2c523.033%2c23.218%2c520.482%2c-74.834C517.724%2c-180.853%2c497.37%2c-290.74%2c430.95%2c-373.421C363.497%2c-457.387%2c260.455%2c-505.492%2c155.411%2c-529.281C54.348%2c-552.168%2c-48.431%2c-532.726%2c-148.154%2c-504.567C-248.774%2c-476.155%2c-342.446%2c-433.352%2c-422.497%2c-366.096C-513.549%2c-289.597%2c-633.16%2c-210.681%2c-639.306%2c-91.918C-645.5%2c27.764%2c-528.557%2c114.172%2c-452.13%2c206.481C-393.272%2c277.57%2c-316.222%2c322.94%2c-246.121%2c382.972C-162.397%2c454.67%2c-110.228%2c593.713%2c0%2c593.666' fill='%23d2d2d2'%3e%3c/path%3e%3cpath d='M1450 1133.058C1554.137 1117.847 1624.907 1026.779 1707.087 961.0350000000001 1780.41 902.376 1857.007 849.471 1905.211 768.888 1957.464 681.538 1995.143 584.68 1993.096 482.915 1990.893 373.41999999999996 1971.627 253.42200000000003 1893.3029999999999 176.87599999999998 1816.1390000000001 101.46499999999997 1695.146 106.762 1588.912 87.90800000000002 1494.218 71.10199999999998 1393.819 32.148000000000025 1306.6390000000001 72.757 1221.511 112.411 1209.355 228.46800000000002 1143.478 295.397 1070.8519999999999 369.183 934.391 383.622 903.424 482.414 872.829 580.019 955.437 674.461 995.102 768.745 1036.1100000000001 866.221 1057.105 977.812 1139.6480000000001 1043.9180000000001 1225.396 1112.591 1341.295 1148.9360000000001 1450 1133.058' fill='white'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1026'%3e%3crect width='1450' height='561' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+   background-color: #f2f3f4; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  background-attachment: fixed;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+#brand-name {
+  font-size: 4rem;
+  font-family: serif;
+  font-weight: 800;
+}
+
+.intro-tag-line-container {
+  margin-bottom: 10px;
+}
+
+#brand-tag-line {
+  /* margin-bottom: 20px; */
+  font-family: monospace;
+  font-size: 1vw;
+}
+
+.app-intro-img {
+  height: 70vh;
+}
+
+
+.testimonial-img {
+  height: 70vh;
+}
+
+
+.app-features{
+  
+  margin: 20px 0px;
+
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .navbar-brand {
+
+    font-size: 1.5rem;
+
+
+  }
+
+  #brand-name {
+    font-size: 2rem;
+  }
+
+  #brand-tag-line{
+    font-size: 0.5rem;
+  }
+
+  .btn{
+    font-size: 0.5rem;
+  }
+  
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ 
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+ 
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  #brand-name {
+    font-size: 2.5rem;
+  }
+  #brand-tag-line{
+    font-size: 0.5rem;
+  }
+  .btn{
+    font-size: 0.8rem;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #brand-tag-line{
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+  </style> 
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3 fw-bold" href="/">IUL FORUM</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item ">
+            <a class="nav-link {% block home_active %} {% endblock home_active %}" aria-current="page" href="/">HOME</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link {% block blog_active %} {% endblock blog_active %}" href="/blog">BLOG</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link {% block notes_active %} {% endblock notes_active %}" href="/notes">NOTES</a>
+          </li> 
+          
+          <li class="nav-item ">
+            <a class="nav-link {% block papers_active %} {% endblock papers_active %}" href="/papers">PAPERS</a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link {% block syllabus_active %} {% endblock syllabus_active %}" href="/syllabus">Syllabus</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" method="GET" action="/search">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" name="query" id="query" aria-label="Search">  
+          <button class="btn btn-outline-danger ms-2" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+{% block carousel %}{% endblock  %}
+
+ 
+
+
+{% block content %}{% endblock  %}
+ 
+  <div class="footer mt-5">
+
+    <div class="upper-footer">
+      <div class="container">
+
+        <div class="row upper-footer-row">
+          <div class="col-sm-12 col-md-6 col-xl-4">
+            <h5 class="navigation footer-heading">Nagivation</h5>
+            <p class="upper-footer-para"><a href="/">Home</a></p>
+            <p class="upper-footer-para"><a href="/blog">Blog</a></p>
+            <p class="upper-footer-para"><a href="/notes">Notes</a></p>
+            <p class="upper-footer-para"><a href="/papers">Papers</a></p>
+            <p class="upper-footer-para"><a href="/about">About</a></p>
+            
+                  <div class="social-media-footer my-4">
+                                   <h5 class="footer-heading" >Social Media</h5>
+                            <a href=""><i class="bottom-footer-icons fab fa-github fa-2x" aria-hidden="true"></i></a>
+                            <a href=""><i class="bottom-footer-icons fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+                            <a href=""><i class="bottom-footer-icons fab fa-facebook fa-2x" aria-hidden="true"></i></a>
+                            <a href=""><i class="bottom-footer-icons fab fa-twitter fa-2x" aria-hidden="true"></i></a>
+                  </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-xl-4">
+                <h5 class="footer-heading " >About Us</h5>
+                <p>iulforum.tech is a site created solely for educational purposes. We intend to give educational materials to the students for the betterment of grades. We believe that knowledge and experience are the two major factors that create a responsible person for the betterment of society. Our aim is to create a digital platform for both the teachers and students to enhance their creativity and systematic knowledge. We are constantly working to get and supply students with the information that can motivate both teachers and students to use electronic devices and internet for studying purposes. We believe in building a education system that can benefit an individual for the development of nation as a whole.</p>
+
+                <h5 class="footer-heading mt-4" >Get in touch</h5>
+                  <p>If you want more information or have any query feel
+                    free to contact us. We also post new information about
+                    IULNOTES regularly. Please also consider subscribing
+                    our official social media pages.
+                  </p>
+                <p class="footer-contact"><a href="mailto:support@iulforum.tech">support@iulforum.tech</a></p>
+          </div>
+          <div class="col-sm-12 col-md-6 col-xl-4">
+              <div class="contactBody">
+                  <div class="contactHeading">
+                   <h5 class="footer-heading" >Your Feedback is highly appreciated !</h5>
+                  </div>
+                <div class="contactForm">
+                  <form action=""	method="POST">
+                  
+                      {% if new_feedback %}
+                           <h5>Your feedback has been sent successfully.</h5>
+                      {% else %}
+                      {{	feedback_form|crispy	}}
+                      {%	csrf_token	%}
+                      <p><input class="btn btn-sm btn-outline-danger mt-3" id="add-comment-btn" type="submit" value="Send Message"></p>
+                      {% endif %}
+                  </form>
+
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-footer">
+      <div class="container">
+        <p class="text-center footer-privacy">Iul Forum © 2021 All rights reserved. | Design and Developed by <a class="text-decoration-none text-danger" href="https://geekyasif.github.io">Mohammad Asif </a> | Managed By <a  <a class="text-decoration-none text-danger" href="" target="_blank">Irshad Akaram</a></p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

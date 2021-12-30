@@ -1,0 +1,130 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Notes : {{subject.name}} {% endblock title %}
+
+{% block content %}
+
+
+<div class="blog-container">
+    <div class="container my-3">
+    
+                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                       crossorigin="anonymous"></script>
+                  <!-- wide ads iulforum -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-8586139549834082"
+                       data-ad-slot="5487928220"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                  <script>
+                       (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                  
+                  
+        <div class="blog-head col-sm-8">
+            <div class="blog-head-title">
+                <h1>{{subject.name}}</h1>
+            </div>
+            <div class="blog-head-description">
+                <p>{{subject.description}}</p>
+            </div>
+            
+                         
+        </div>
+
+
+
+        <div class="blog-content ">
+            <div class="row  blow-row">
+                <div class="col-sm-8">
+
+                              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                       crossorigin="anonymous"></script>
+                  <!-- wide ads iulforum -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-8586139549834082"
+                       data-ad-slot="5487928220"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                  <script>
+                       (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+
+                    <div class="notes-section">
+                        <div class="alert alert-secondary my-4 shadow" role="alert">
+                            All Unit Notes
+                        </div>
+
+                    <ul class="notes-download-ul">
+                        {% for note in notes %}
+
+                        
+                        <li class="notes-download-li my-3" ><a class="text-decoration-none" href="/media/{{note.document}}">{{note.title}}</a></li>
+
+                        {%empty%}
+                        <p class="text-center"> No Notes Found !</p>
+
+
+                        {% endfor %}
+                      </ul>  
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 mt-4">
+                    <div class="blog-category-sidebar">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            Subjects
+                        </div>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                             crossorigin="anonymous"></script>
+                        <!-- sidebar ads -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-8586139549834082"
+                             data-ad-slot="5573125493"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+
+                         
+                        {% for subject in subjects %}
+                        
+                   <div class="list-group my-2 shadow-sm">
+                        <a href="{{subject.get_absolute_url}}" class="list-group-item list-group-item-action " aria-current="true"> {{subject.name}}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                                             crossorigin="anonymous"></script>
+                                        <!-- sidebar ads -->
+                                        <ins class="adsbygoogle"
+                                             style="display:block"
+                                             data-ad-client="ca-pub-8586139549834082"
+                                             data-ad-slot="5573125493"
+                                             data-ad-format="auto"
+                                             data-full-width-responsive="true"></ins>
+                                        <script>
+                                             (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock content %}

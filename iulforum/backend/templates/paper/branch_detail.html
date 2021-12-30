@@ -1,0 +1,104 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}IUL PAPERS : {{branch.name}} {% endblock title %}
+{% block papers_active %} active {% endblock papers_active %}
+
+
+{% block content %}
+<div class="blog-container my-3">
+    <div class="container">
+        <script async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+            crossorigin="anonymous"></script>
+        <!-- wide ads iulforum -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8586139549834082"
+            data-ad-slot="5487928220" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <div class="blog-head col-sm-8">
+            <div class="blog-head-title">
+                <h1>{{branch.name}}</h1>
+            </div>
+            <div class="blog-head-description">
+                {% comment %} <p>{{branch.description}}</p> {% endcomment %}
+            </div>
+        </div>
+
+
+        <div class="blog-content my-4">
+            <div class="row  blow-row">
+                <div class="col-sm-8">
+                    <div class="alert alert-secondary shadow" role="alert">
+                        All Semesters
+                    </div>
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                        crossorigin="anonymous"></script>
+                    <!-- wide ads iulforum -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8586139549834082"
+                        data-ad-slot="5487928220" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <div class="blog-latest-post">
+
+                        <div class="row row-cols-1 row-cols-md-3 g-4 mt-2 mb-5 text-center">
+                            {% for semester in semesters %}
+                            <div class="col">
+                                <a class="btn d-grid gap-2 btn-outline-danger" href="{{semester.get_absolute_url}}"
+                                    role="button">{{semester.semester}}</a>
+                            </div>
+                            {%empty%}
+                            <h5 class="text-center">Not Found :(</h5>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="blog-category-sidebar">
+                        <div class="alert alert-secondary shadow" role="alert">
+                            All Branches
+                        </div>
+                        {% for branch in branches %}
+                        <div class="list-group my-2 shadow-sm">
+                            <a href="{{branch.get_absolute_url}}" class="list-group-item list-group-item-action "
+                                aria-current="true"> {{branch.name}}</a>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                        crossorigin="anonymous"></script>
+                    <!-- sidebar ads -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8586139549834082"
+                        data-ad-slot="5573125493" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8586139549834082"
+                        crossorigin="anonymous"></script>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+{% endblock content %}
